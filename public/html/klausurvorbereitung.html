@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Klausurvorbereitung</title>
+</head>
+<body>
+
+<div id="message">
+
+</div>
+<br>
+<script>
+    let button = document.createElement('button');
+    let msg = document.getElementById('message')
+    button.setAttribute('type','button');
+    button.innerText = "Klick me. Olaf will greet you.";
+
+    msg.append(button)
+    button.addEventListener('click', function () {
+
+
+        let img = document.createElement('img');
+        img.width = "200"
+        img.height = "200"
+        img.src = "/public/articelpictures/olaf-scholz-01.jpg";
+
+        let panzer = document.createElement('img');
+        panzer.width = "200"
+        panzer.height = "200"
+        panzer.src = "/public/articelpictures/panzercoco.jpg";
+        panzer.append('Hier ist dein Panzer')
+
+        let coco = document.createElement('img');
+        coco.width = "200"
+        coco.height = "250"
+        coco.src = "/public/articelpictures/häh (1).jpg";
+
+
+        let breaking = document.createElement('br')
+        let breaking1 = document.createElement('br')
+        msg.prepend(img)
+        msg.append([": Hey i'm Olaf"])
+        msg.append(breaking)
+        msg.append(coco)
+        msg.append([": Howdy?"])
+        msg.append(breaking1)
+        msg.append(panzer)
+        msg.append([": Hier ist dein Panzer"])
+        button.style.display = "none";
+    })
+</script>
+</body>
+</html>

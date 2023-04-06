@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-vue3-if</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+<div id="app">
+    <h1 v-if="serverdown">{{msg}}</h1>
+    <h1 v-else>Alles läuft normal</h1>
+    <button v-on:click="toggleServer">Toggle</button>
+    <h1>Number : {{number}}</h1>
+    <button @click="incrementNumber">Increment number</button>
+    <button @click="number--">Decrement number</button>
+</div>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return{
+                msg: 'Der Webserver ist zurzeit nicht erreichbar',
+                serverdown: false,
+                number: 0
+            }
+        },
+        methods: {
+            toggleServer() {
+                this.serverdown = !this.serverdown;
+            },
+            incrementNumber(){
+                this.number++;
+            }
+        }
+    })
+    app.mount('#app')
+</script>
+</body>
+</html>

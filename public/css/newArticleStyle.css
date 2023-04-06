@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  background-color: #f4f4f4;
+}
+
+.article__div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.article__form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 1px 1px gray;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.submit__btn {
+  margin-top: 1rem;
+}
+
+.error__div__span--active {
+  font-size: 10px;
+  color: red;
+}

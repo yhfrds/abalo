@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-vue2-array</title>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.33/vue.global.min.js"></script>-->
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        table, tr, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="array-app">
+    <table>
+        <tr v-for="item in items">
+            <td v-for="detail in item">
+                {{detail}}
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    import { createApp } from 'vue'
+    let vmmm = createApp({
+        data() {
+            return {
+                items : [{name: "Reifen", price: 8290},
+                    {name: "Antenne drehbar. Leicht geknickt", price: 1400},
+                    {name: "Opel Kadett C 1992 – wie neu", price: 150000}
+                ]
+            }
+        }
+    }).mount('#array-app');
+</script>
+</body>
+</html>

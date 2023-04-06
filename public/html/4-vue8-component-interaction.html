@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-vue8-component-interaction</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+<div id="app">
+    <div>
+        <p>{{msg}}</p>
+    </div>
+    <komponenta ref="komponentb">
+    </komponenta>
+
+    <komponentb ref="komponenta">
+
+    </komponentb>
+</div>
+
+<script>
+
+    let myapp = Vue.createApp({
+        data(){
+            return{
+                msg:''
+            }
+        }
+    })
+    myapp.component('komponenta',{
+        methods:{
+            greet(){
+                myapp.$refs.komponentb.sayHelloFromB()
+            },
+            sayHelloFromA(){
+                myapp.msg = "Hello, this is function from komponentB"
+            }
+        },
+        template: `<button @click="greet">sayHelloFromA</button>`
+    })
+    myapp.component('komponentb',{
+        methods:{
+            greet(){
+                console.log(myapp.$refs)
+                myapp.$refs.komponenta.sayHelloFromA()
+            },
+            sayHelloFromB(){debugger;
+                return "Hello, this is function from komponentB"
+            }
+        },
+        template: `<button @click="greet">sayHelloFromB</button>`
+    })
+    myapp.mount(app)
+
+</script>
+</body>
+</html>

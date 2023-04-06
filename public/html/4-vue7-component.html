@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-vue7-component.html</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+<div id="app">
+    <counting></counting>
+</div>
+
+<script type="module">
+    import Counting from './js/4v7component.js'
+    let myapp = Vue.createApp({
+        components:{
+            Counting
+        }
+    }).mount('#app')
+
+</script>
+</body>
+</html>

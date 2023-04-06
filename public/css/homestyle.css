@@ -1,0 +1,85 @@
+*{
+    font-family: Verdana;
+    min-font-size: 12px;
+}
+body{
+    margin: 0;
+}
+header{
+    background-color: #2d3748;
+    min-height: 50px;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    gap: 3px;
+
+    font-family: Arial;
+}
+.navigation{
+    background-color: #181818;
+    color: white;
+    position: relative;
+}
+.navigation li>a{
+    text-decoration: none;
+    color: white;
+}
+.rightside{
+    /*background-color: #cbd5e0;*/
+    /*overflow to create scrollable area*/
+    overflow: auto;
+}
+
+.cart-items {
+    width: 100%;
+    height: 50%;
+
+    position: absolute; /*so that the warenkorb go down*/
+    left: 0;
+    bottom: 0;
+    margin-right: auto;
+    margin-top: auto;
+
+    background-color: cadetblue;
+    overflow: auto;
+
+    padding-left: 10%;
+    box-sizing: border-box; /*no out of the box*/
+
+    color: #181818;
+}
+.cookie{
+    width: 50%;
+
+    left:0;
+    right: 0;
+    bottom: 50px;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+
+    background-color: white;
+    border: 1px solid #1a202c;
+    box-shadow: 1px 1px gray;
+    padding: 10px;
+    border-radius: 3px;
+    display: none;
+}
+#acceptcookie{
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+}
+#denycookie{
+    background-color: whitesmoke;
+    border-radius: 3px;
+}
+
+
+.hidden{
+    display: none;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-vue1-helloworld</title>
+<!--    <script src="/public/js/vue.js"></script>-->
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+<div id="hello-world-app">
+    <h1>{{msg}}</h1>
+</div>
+<script>
+    var appData ={
+        msg:'Hello World'
+    };
+
+    new Vue({
+        el:'#hello-world-app',
+        data: appData
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Klausurvorbereitung1</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+<div id="app">
+    <komponent-one></komponent-one>
+    <komponent-two></komponent-two>
+    <komponent-three></komponent-three>
+</div>
+<script>
+    let firstcomponent = {
+        data() {
+            return {
+                count: 0
+            }
+        },
+        template: `
+            <div>{{ count }}</div>
+            <button @click="count++">+</button>
+            <button @click="kurangkan">-</button>
+        `,
+        methods: {
+            kurangkan: function () {
+                debugger;
+                this.$data.count--;
+            }
+        }
+    }
+    let secondcomponent = {
+        data() {
+            return {
+                arr: [{name: "Yudha", yearofbirth: 2001},
+                    {name: "Annisa", yearofbirth: 2005},
+                    {name: "Akbar", yearofbirth: 2010},
+                    {name: "Felicia", yearofbirth: 2010},
+                    {name: "Fathir", yearofbirth: 2011}],
+                currentYear: new Date().getFullYear()
+            }
+        },
+        template: `
+            <div>This component is about array</div>
+            <div v-for="person in arr" v-bind:name="person.name">
+            <span v-if="currentYear - person.yearofbirth > 13">Teenager</span>
+            <span v-else-if="currentYear - person.yearofbirth < 13">Child</span>
+            <span v-else>Adult</span>
+                {{ person.name }} was born in {{ person.yearofbirth }}
+            </div>
+        `
+    }
+    let thirdcomponent = {
+        template: `<div>This is the 3rd component</div>`
+    }
+    let app = Vue.createApp({
+        components: {
+            KomponentOne: firstcomponent,
+            KomponentTwo: secondcomponent,
+            KomponentThree: thirdcomponent
+        }
+    })
+    app.mount('#app')
+</script>
+</body>
+</html>

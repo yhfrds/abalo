@@ -1,0 +1,121 @@
+@use 'color';
+@use 'typography';
+@import "./node_modules/vue-cookieconsent-component/src/scss/cookie-consent";
+
+@mixin div__layout {
+    height: 50px;
+    background-color: color.$primaryColor;
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    background-color: #2d3748;
+    min-height: 50px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    gap: 3px;
+}
+
+.navigation{
+    background-color: color.$colorBlack;
+    color: color.$colorWhite;
+    position: relative;
+}
+
+.navigation li>a{
+    text-decoration: none;
+    color: white;
+}
+
+.cookie__div{
+    width: 50%;
+
+    left:0;
+    right: 0;
+    bottom: 50px;
+    margin: auto;
+    position: fixed;
+    text-align: center;
+
+    border: none;
+    box-shadow: 1px 1px gray;
+    padding: 10px;
+    border-radius: 3px;
+    display: none;
+    background-color: color.$colorWhite;
+
+    button {
+        cursor: pointer;
+        border: none;
+        padding: 1rem;
+    }
+
+    &__button--accept{
+        color: color.$colorWhite;
+        background: color.$colorBlack;
+        border-radius: 3px;
+    }
+    &__button--deny{
+        background: #fff;
+        border: color.$colorBlack 0.1rem solid;
+        border-radius: 3px;
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+.header__div{
+    @include div__layout;
+    font-size:30px;
+    padding:10px
+}
+
+.body__div{
+    .rightside{
+        padding: 1rem;
+        .cart__items {
+            h2{
+                margin: 0;
+            }
+            padding: 1rem;
+            background-color: #8685EF;
+            color: color.$colorBlack;
+        }
+    }
+
+    .div__articlesTable {
+        padding: 1rem;
+
+        .searh__input{
+            width: 99%;
+            height: 20px;
+        }
+    }
+}
+
+.footer__div{
+    @include div__layout;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+
+    &--center{
+        display: flex;
+        justify-content: center;
+    }
+}
